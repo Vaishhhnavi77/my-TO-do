@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App with Dark Mode & Animations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 🌙 Theme Toggle Switch -->
+    <nav>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <em>Dark Mode</em>
+        </div>
+    </nav>
+
+    <!-- 🎯 Main Todo App -->
+    <div class="container">
+        <h1 class="app-title">Todo List</h1>
+
+        <!-- ✅ Todo Form -->
+        <form class="todo-form">
+            <input type="text" id="todo-input" class="inputselect" placeholder="Add a new task..." required>
+            <button type="submit" class="add-todo-btn">Add</button>
+        </form>
+
+        <!-- 📋 Todo List -->
+        <ul class="todo-list"></ul>
+
+        <!-- ⚠️ Empty State -->
+        <div class="empty-state">
+            <svg class="checklist-icon" fill="var(--svgcolor)" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
+            </svg>
+            <p class="empty-state__title">No tasks yet!</p>
+        </div>
+
+        <!-- 🎯 Progress Bar -->
+        <div class="progress-container">
+            <!-- <p>Progress: <span id="progress-count">0</span>%</p> -->
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- 🚀 Clear Completed Button -->
+        <button id="clear-completed" class="clear-btn">Clear Completed Tasks</button>
+    </div>
+
+    <!-- 🔔 Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

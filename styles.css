@@ -1,0 +1,188 @@
+/* 🌙 Light & Dark Mode */
+:root {
+    --background-light: #ede9e3;
+    --background-dark: #2c2c2c;
+    --text-light: #333;
+    --text-dark: #f5f5f5;
+    --primary-color: #d4b2a7;
+    --secondary-color: #a38f85;
+    --border-color: #cdc6c3;
+    --svgcolor: #555;
+}
+
+[data-theme="dark"] {
+    --background-light: #2c2c2c;
+    --text-light: #f5f5f5;
+    --svgcolor: #ccc;
+}
+
+body {
+    background: var(--background-light);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* 🌙 Theme Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 10px 0;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.theme-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    border-radius: 34px;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.theme-switch input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+/* ✅ Todo Input */
+.todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputselect {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-todo-btn {
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-todo-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* 📋 Todo List */
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(138, 51, 98);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.todo-item.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* 🗑 Delete Button */
+.delete-todo {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 🎯 Progress Bar */
+.progress-container {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* 🚀 Clear Completed Button */
+.clear-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+/* 🔔 Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+/* ⚠️ Empty State */
+.empty-state {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checklist-icon {
+    width: 40px;
+    height: 40px;
+}
